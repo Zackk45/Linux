@@ -1,0 +1,65 @@
+#! /bin/bash
+#
+###############################################################################
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##
+###############################################################################
+#
+#
+
+cd $HOME
+
+#Installation de l'environnement graphique openbox + outils
+sudo apt-get install -y xorg openbox xinit pcmanfm chromium-browser terminator notify-osd libnotify-bin numlockx
+sudo apt-get install -y libc-dev-bin libc6-dev linux-libc-dev manpages manpages-fr manpages-fr-extra manpages-fr-dev manpages-dev manpages-posix-dev xscreensaver xscreensaver-data ibus ibus-gtk ibus-gtk3 libibus-1.0 poppler-utils wkhtmltopdf
+
+#Installation de logiciel complémentaire
+sudo apt-get install -y obconf lxappearance obmenu xarchiver alsa-utils gnome-alsamixer wicd menu menu-xdg gnome-menus openbox-xdgmenu gpicview cups elementary-icon-theme nitrogen conky plank tint2 gufw compton deborphan synaptic apturl gdebi htop gmrun vim lubuntu-restricted-addons lubuntu-restricted-extras linux-firmware-nonfree scrot gpicview evince gedit gksu vlc lubuntu-software-center language-selector-gnome tree ppa-purge git
+
+#Instatallation de codec vidéo/audio + format de compression
+sudo apt-get install -y unace rar unrar unar p7zip-rar p7zip zip unzip arj libuu0 mpack sharutils uudeview gstreamer0.10-plugins-ugly gxine libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame libmad0 mpg321 libavcodec-extra xz-utils
+
+#Installation du microcode pour les processeurs intel
+sudo apt-get install -y intel-microcode
+
+#Gestion de l'énergie, ajout du dépôt et installation
+sudo apt-add-repository ppa:linrunner/tlp
+sudo apt-get update
+sudo apt-get install -y tlp tlp-rdw
+sudo apt-get remove -y --purge network-manager-gnome
+
+#Ajout de l'utilisateur aux groupe audio pour faire fonctionner le son et netdev pour internet
+sudo adduser $USER audio
+sudo adduser $USER netdev
+
+#Ne plus demander le mot de passe root pour éteindre ou redémarrer
+sudo chmod +s /sbin/telinit
+
+#Téléchargement des fichiers de configuration
+wget https://raw.githubusercontent.com/Zackk45/Linux/master/installation/archive.tar.xz
+tar -xvJf archive.tar.xz
+chown -Rc 1000:1000 $HOME
+
+#Téléchargement du projet obuntu pour s'inspirer
+wget http://cigeekchoops.free.fr/obuntu/obuntu.tar.gz
+mv -v obuntu.tar.gz $HOME/Téléchargements
+
+#Meilleur gestion du swap et de la mémoire
+echo vm.swappiness=5 | sudo tee /etc/sysctl.d/99-swappiness.conf
+echo vm.vfs_cache_pressure=50 | sudo tee -a /etc/sysctl.d/99-swappiness.conf
+sudo sysctl -p /etc/sysctl.d/99-swappiness.conf
+
+#Mise à jour, nettoyage du système et redémarrage
+sudo apt-get dist-upgrade -y
+sudo apt-get autoremove -y
+telinit 6
+
+#Modifier la méthode d'entré au clavier (gksudo ibus-setup) ainsi que la langue (gksudo /usr/bin/gnome-language-selector)
