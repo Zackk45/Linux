@@ -1,13 +1,14 @@
 #! /bin/bash
 #
-##################################################################################################
-## 1.Télécharger le script																		##
-##		wget https://raw.githubusercontent.com/Zackk45/Linux/master/installation/ 				##
-## 2.Le rendre éxecutable																		##
-##		chmod +x ./install.sh																	##
-## 3.L'éxecuter																					##
-##		./install.sh																			##
-##################################################################################################
+######################################################################################################
+## 1.Télécharger le script																			##
+##		wget https://raw.githubusercontent.com/Zackk45/Linux/master/installation/install.sh 		##
+##		wget https://raw.githubusercontent.com/Zackk45/Linux/master/installation/archive.tar.xz 	##
+## 2.Le rendre éxecutable																			##
+##		chmod +x ./install.sh																		##
+## 3.L'éxecuter																						##
+##		./install.sh																				##
+######################################################################################################
 
 cd $HOME
 
