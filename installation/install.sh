@@ -20,7 +20,7 @@ sudo apt-get install lubuntu-restricted-addons lubuntu-restricted-extras linux-f
 sudo apt-get update
 
 #Installation de logiciel complémentaire
-sudo apt-get install obconf lxappearance obmenu xarchiver alsa-utils gnome-alsamixer wicd menu menu-xdg gnome-menus openbox-xdgmenu gpicview cups
+sudo apt-get install obconf lxappearance obmenu xarchiver alsa-utils gnome-alsamixer wicd menu menu-xdg gnome-menus openbox-xdgmenu gpicview cups gparted
 sudo apt-get update
 sudo apt-get install elementary-icon-theme nitrogen conky plank tint2 gufw compton deborphan synaptic apturl gdebi htop gmrun
 sudo apt-get update
