@@ -7,7 +7,7 @@
 ## 2.Le rendre éxecutable																			##
 ##		chmod +x ./install.sh																		##
 ## 3.L'éxecuter																						##
-##		./install.sh																				##
+##		sudo ./install.sh																			##
 ######################################################################################################
 
 cd $HOME
