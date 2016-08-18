@@ -15,9 +15,9 @@ cd $HOME
 #Installation de l'environnement graphique openbox + outils
 sudo apt-get install xorg openbox xinit pcmanfm chromium-browser terminator notify-osd libnotify-bin numlockx
 sudo apt-get update
-sudo apt-get install libc-dev-bin libc6-dev linux-libc-dev manpages manpages-fr manpages-fr-extra manpages-fr-dev manpages-dev manpages-posix-dev xscreensaver xscreensaver-data ibus ibus-gtk ibus-gtk3 libibus-1.0 poppler-utils wkhtmltopdf
+sudo apt-get install libc-dev-bin libc6-dev linux-libc-dev manpages manpages-fr manpages-fr-extra manpages-fr-dev manpages-dev manpages-posix-dev xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra ibus ibus-gtk ibus-gtk3 libibus-1.0 poppler-utils wkhtmltopdf
 sudo apt-get update
-sudo apt-get install lubuntu-restricted-addons lubuntu-restricted-extras linux-firmware-nonfree
+sudo apt-get install ubuntu-restricted-addons ubuntu-restricted-extras linux-firmware-nonfree
 sudo apt-get update
 
 #Installation de logiciel complémentaire
